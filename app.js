@@ -1,5 +1,6 @@
 // we will access our configuration details as `appConfig` which has data that is an object with properties.
 const appConfig = require('./appConfig.js');
+const fs = require('fs');
 
 module.exports = {
     // `serverConfig` is a property of the `module.exports` object.
@@ -12,18 +13,33 @@ module.exports = {
       */
     httpHandler: function(requestFromUser, ressponeToUser) {
         // setting status to `200` indicates a successful process had occured. See https://www.restapitutorial.com/httpstatuscodes.html
-        ressponeToUser.statusCode = 200;
         // setting the Content-Type header lets the browse know about what content is being sent in repsonse
         // see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers and https://en.wikipedia.org/wiki/List_of_HTTP_header_fields
-        ressponeToUser.setHeader('Content-Type', 'text/html');
+        ressponeToUser.writeHeader(200, {'Content-Type': 'text/html'});
+
+        //lread the index from the config file with an error (if not found) or the HTML data
+        fs.readFile(appConfig.homepage.url, function(error, data) {
+            // first handle the error
+            if (error) {
+                // If there's an error then present 404 page
+                ressponeToUser.writeHead(404)
+                ressponeToUser.write('Error 404: File not Found')  
+            } else {
+                // If it finds the page, display the data
+                ressponeToUser.write(data)
+            }
+               // required to end the request/response
+            ressponeToUser.end();
+        })},
         // write text that the user will see in their browser
-        ressponeToUser.write('<h1>Hello Summer Cohort 2020</h1>');
+        // ressponeToUser.write('<h1>Hello Summer Cohort 2020</h1>');
         // after you browse to http://127.0.0.1:3000/ come back and change this text a few times while confirming the change in the browser each time
         // note: refresh your browser each time to see the changes you've made here
-        ressponeToUser.write('<p>Change this text a few times in VS Code to test your simple http server and nodemon out</p>');
-        // required to end the request/response
-        ressponeToUser.end();
-    },
+        // ressponeToUser.write('<p>Test Change! Change this text a few times in VS Code to test your simple http server and nodemon out</p>');
+        
+    
+        
+    
     /**
      * 'serverStartupHandler' is a prpoperty with a value that is a "function" and can be called by our other code
      */ 
