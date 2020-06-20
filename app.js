@@ -20,7 +20,7 @@ module.exports = {
         ressponeToUser.write('<h1>Hello Summer Cohort 2020</h1>');
         // after you browse to http://127.0.0.1:3000/ come back and change this text a few times while confirming the change in the browser each time
         // note: refresh your browser each time to see the changes you've made here
-        ressponeToUser.write('<p>Change this text a few times in VS Code to test your simple http server and nodemon out</p>');
+        ressponeToUser.write('<p>Test Change! Change this text a few times in VS Code to test your simple http server and nodemon out</p>');
         // required to end the request/response
         ressponeToUser.end();
     },
