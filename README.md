@@ -2,12 +2,23 @@
 
 ## Quick Start
 
-- Fork this repo. For more info about Forking in github see <https://help.github.com/en/github/getting-started-with-github/fork-a-repo> and <https://help.github.com/en/enterprise/2.13/user/articles/fork-a-repo>
-- Open a terminal on your machine and navigate to the folder you use as the parent folder for all of you projects.
-- Clone your github repository copy to your local machine. For more info about cloning see <https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository>
+See the next readme section if you are unfamiliar with or would like to learn more about the subjects and commands listed here.
+
+- Fork this repo
+- Open a terminal on your machine and navigate to the folder you use as the parent folder for all of you projects
+- Clone your github repository copy to your local machine
 - Once you have cloned the repo on your local machine, be sure to `cd` into the project. Use `pwd` and `ls` to help confirm where you are in the terminal
-- Run `npm install` to install nodemon which is defined as project dependency in `package.json`. For more info about `npm` and `npm install` See <https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/> and <https://www.w3schools.com/whatis/whatis_npm.asp>
+- Run `npm install` to install nodemon which is defined as project dependency in `package.json`
 - Run `npm run server` to execute the `server` script that is defined in `package.json`
+
+## Info on Quick Start Commands
+
+For more info about the subjects and commands above check out these resoruces.
+
+- Forking in github, see <https://help.github.com/en/github/getting-started-with-github/fork-a-repo> and <https://help.github.com/en/enterprise/2.13/user/articles/fork-a-repo>
+- Cloning, see <https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository>
+- More about `npm` and `npm install`, see <https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/> and <https://www.w3schools.com/whatis/whatis_npm.asp>
+- More about `npm run`, see <https://michael-kuehnel.de/tooling/2018/03/22/helpers-and-tips-for-npm-run-scripts.html>
 
 ## Documentation of the Code
 
