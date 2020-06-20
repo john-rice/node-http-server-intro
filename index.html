@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+    <!-- Add title to the page. -->
+    <title>
+        World's Best JS Calculator
+    </title>
+
+    <!-- Call on Bootstrap's CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Javascript to make calculator work-->
+    <script>
+        // Create calculator Function to call later
+        var calculator = {
+            // addNumber function to add the two numbers 
+            addNumbers: function () {
+                // pull our two numbers
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Do our calculation..
+                document.forms.inputs.result.value = parseInt(numberOne) + parseInt(numberTwo);
+            },
+
+            // subtractNumber function to subtract the two numbers
+            subtractNumbers: function () {
+                // pull our two numbers
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Do our calculation..
+                document.forms.inputs.result.value = parseInt(numberOne) - parseInt(numberTwo);
+            },
+
+            // multiplyNumber function to multiply the two numbers
+            multiplyNumbers: function () {
+                // pull our two numbers
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Do our calculation..
+                document.forms.inputs.result.value = parseInt(numberOne) * parseInt(numberTwo);
+            },
+
+            // divideNumber function to divide the two numbers
+            divideNumbers: function () {
+                // pull our two numebrs
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Do our calculation..
+                document.forms.inputs.result.value = parseInt(numberOne) / parseInt(numberTwo);
+            },
+
+            //Make a script to flip the numbers
+            flipNumbers: function () {
+                // Pull the current numbers
+                var numberOne = document.forms.inputs.numberOne.value;
+                var numberTwo = document.forms.inputs.numberTwo.value;
+
+                // Apply them on opposite fields
+                document.forms.inputs.numberOne.value = numberTwo;
+                document.forms.inputs.numberTwo.value = numberOne;
+            }
+        };
+    </script>
+</head>
+
+<body>
+
+    <!-- Visible header at top of page using Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Hollis's JS Calculator</a>
+        </div>
+    </nav>
+    <br></br>
+
+    <!-- Allow two numbers to be entered
+show buttons for add and subtract
+        then show the results  -->
+    <!-- Create a form to reference in JS -->
+    <form name="inputs">
+        <!-- Create our card to hold our calculator controls and center it -->
+        <div class="card bg-light mb-3" style="max-width: 90%;margin:0 auto;">
+            <h4 class="card-header">Main Calculator</h4>
+            <!-- Input box one-->
+            <div class="input-group mb-3" style="max-width: 95%;margin:0 auto;padding-top: 15px;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Number One:</span>
+                </div>
+                <input type="number" pattern="[0-9]*" class="form-control" placeholder="" aria-label="Number One"
+                    aria-describedby="basic-addon1" name="numberOne"></input>
+            </div>
+
+            <!-- Input box two-->
+            <div class="input-group mb-3" style="max-width: 95%;margin:0 auto;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Number Two:</span>
+                </div>
+                <input type="number" pattern="[0-9]*" class="form-control" placeholder="" aria-label="Number Two"
+                    aria-describedby="basic-addon1" name="numberTwo"></input>
+            </div>
+
+
+            <!-- Create the function buttons -->
+            <div class="btn-group" role="Group" style="padding-bottom: 15px;margin:0 auto;">
+                <button type="button" onclick="calculator.addNumbers()" class="btn btn-primary">Add (+)</button>
+                <button type="button" onclick="calculator.subtractNumbers()" class="btn btn-primary">Subtract
+                    (-)</button>
+                <button type="button" onclick="calculator.multiplyNumbers()" class="btn btn-primary">Multiply
+                    (x)</button>
+                <button type="button" onclick="calculator.divideNumbers()" class="btn btn-primary">Divide (÷)</button>
+                <button type="button" onclick="calculator.flipNumbers()" class="btn btn-success">Swap Numbers</button>
+                <button type="button" onclick="window.location.reload()" class="btn btn-danger">Clear
+                    Calculator</button>
+
+            </div>
+            <!-- Display the result! -->
+            <div class="card-footer">
+                <div class="input-group mb-3" style="max-width: 98%;margin:0 auto;">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Result:</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="0" aria-label="Result"
+                        aria-describedby="basic-addon1" name="result" disabled></input>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Footer -->
+    <footer class="footer fixed-bottom" style="background-color: #36393D; padding:15px;">
+        <div class="container text-center">
+            <span class="text-muted">Hollis Jamison / June 2020</span>
+            <div class="text-muted">Made for Stack Education</div>
+            <div class="text-muted">Web Development Summer 2020 Cohort</div>
+        </div>
+    </footer>
+</body>
+
+
+</html>
